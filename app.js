@@ -1,13 +1,12 @@
-let myString =  '5 1 2 + 4 * + 3 -'
+let rpnProblem =  '5 1 2 + 4 * + 3 -'
 
 
-const result = (mystr) => {
+const result = (rpnProblemStr) => {
     let operators = ["+", "-", "*", "/"]
-    let newStr = mystr.split('')
-
     let stack = []
-    for (i = 0; i < newStr.length; i++){
-        let item = newStr[i]
+    for (i = 0; i < rpnProblemStr.length; i++){
+        let item = rpnProblemStr[i]
+        
         if(operators.indexOf(item) != -1 ){
 
             let lastStackItem = stack.pop()
@@ -32,4 +31,4 @@ const result = (mystr) => {
     return +stack[0]
 }
 
-console.log(result(myString))
+console.log(result(rpnProblem))
